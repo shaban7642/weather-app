@@ -5,6 +5,7 @@ const forcast = require('./utilis/forcast')
 const geoCode = require('./utilis/geoCode')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //Define paths for Express Config
 const publicDirectoryPath = path.join(__dirname ,'../public')
@@ -87,8 +88,8 @@ app.get('*' , (req, res)=>{
         errorMessage: 'Page Not Found'
     })
 })
-app.listen(3000 , ()=>{
-    console.log('you are up to 3000 port')
+app.listen(port , ()=>{
+    console.log('you are up to port' + port)
 })
 
 
